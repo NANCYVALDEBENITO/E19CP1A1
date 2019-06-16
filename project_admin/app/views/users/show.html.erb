@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <% @projects.each do |project| %>
+  <li><%= project.name %> <%= link_to 'Delete', user_users_project_path(@user, project), method: :delete %></li>
+  <% end %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+
